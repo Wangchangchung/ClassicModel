@@ -65,13 +65,13 @@ gbr_y_predict = gbr.predict(X_test)
 # 使用R-squared、MSE以及MAE指标对默认配置的随机回归森林在测试集上进行性能评估。
 print ('R-squared value of RandomForestRegressor:', rfr.score(X_test, y_test))
 print ('The mean squared error of RandomForestRegressor:', mean_squared_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(rfr_y_predict)))
-print ('The mean absoluate error of RandomForestRegressor:', mean_absolute_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(rfr_y_predict)))
+print ('The mean absolute error of RandomForestRegressor:', mean_absolute_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(rfr_y_predict)))
 
 
 # 使用R-squared、MSE以及MAE指标对默认配置的极端回归森林在测试集上进行性能评估。
 print ('R-squared value of ExtraTreesRegessor:', etr.score(X_test, y_test))
 print ('The mean squared error of  ExtraTreesRegessor:', mean_squared_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(etr_y_predict)))
-print ('The mean absoluate error of ExtraTreesRegessor:', mean_absolute_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(etr_y_predict)))
+print ('The mean absolute error of ExtraTreesRegessor:', mean_absolute_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(etr_y_predict)))
 
 # 利用训练好的极端回归森林模型，输出每种特征对预测目标的贡献度。
 print (numpy.sort(zip(etr.feature_importances_, boston.feature_names), axis=0))
@@ -80,7 +80,7 @@ print (numpy.sort(zip(etr.feature_importances_, boston.feature_names), axis=0))
 # 使用R-squared、MSE以及MAE指标对默认配置的梯度提升回归树在测试集上进行性能评估。
 print ('R-squared value of GradientBoostingRegressor:', gbr.score(X_test, y_test))
 print ('The mean squared error of GradientBoostingRegressor:', mean_squared_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(gbr_y_predict)))
-print ('The mean absoluate error of GradientBoostingRegressor:', mean_absolute_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(gbr_y_predict)))
+print ('The mean absolute error of GradientBoostingRegressor:', mean_absolute_error(ss_y.inverse_transform(y_test), ss_y.inverse_transform(gbr_y_predict)))
 
 '''
 特点分析
